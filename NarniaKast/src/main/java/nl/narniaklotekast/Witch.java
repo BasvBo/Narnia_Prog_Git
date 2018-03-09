@@ -21,7 +21,7 @@ public class Witch {
             System.out.println("defeat Witch");
             witchIsDefated = true;
         } else {
-            System.out.println("de kans of defeat" + fightWitch);
+            System.out.println("de kans of defeat" +" "+ fightWitch);
             witchIsDefated= false;
         }
     }

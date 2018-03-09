@@ -8,9 +8,12 @@ public class App {
     public static void main(String[] args) {
 
         int experience = 1;
+        int timesTryd =0;
 
         AngryNany nany = new AngryNany(true);
         Witch whiteWitch = new Witch(false);
+        Narnia worldOfNarnia = new Narnia(false);
+        Lion asland = new Lion("Asland");
 
         System.out.println("Build Kast");
         // crieer kast
@@ -20,6 +23,8 @@ public class App {
 
         while (true) {
 
+            timesTryd ++;
+
             System.out.println("Kick Kast");
             // force kick
             mijnKast.kickKast(mijnKast);
@@ -28,35 +33,34 @@ public class App {
                 continue;
             }
 
-            System.out.println("try not to get caught");
+            System.out.println("trying not to get caught");
             //test if you have been caught
             nany.gettingCaucht();
             if (nany.getNannyIsAngry() == true) {
                 continue;
             }
 
-            int chanceGetInToNarnia = (int) Math.floor((Math.random() * (100 / experience)) + 0);
-
-            if (chanceGetInToNarnia == 1) {
-                System.out.println("jeej in narnia");
-                System.out.println(chanceGetInToNarnia);
-            } else {
+            System.out.println("trying to get in to Narnia");
+            //Try to get in to narnia
+            worldOfNarnia.tryingToGetInToNarnia(experience);
+            if (worldOfNarnia.getGotInToNarnia() == false) {
                 mijnKast = buildkast();
-                System.out.println("de kans" + chanceGetInToNarnia);
                 continue;
             }
 
-            System.out.println("Fight the Witch");
+            System.out.println("Fighting the Witch");
             //Fight with Witche
             whiteWitch.fightWitch(experience);
             if (whiteWitch.getWitchIsDefated() == false) {
                 mijnKast = buildkast();
                 experience = ++experience;
-                System.out.println("Experience" + experience);
+                System.out.println("Experience" + " " + experience);
                 continue;
             }
 
             System.out.println("Talking Talking Talking Talking");
+            System.out.println("Times Tried = " + timesTryd);
+            asland.prntLion();
             break;
         }
 
@@ -85,6 +89,9 @@ public class App {
 
 
     }
+
+
+
 
 
 }

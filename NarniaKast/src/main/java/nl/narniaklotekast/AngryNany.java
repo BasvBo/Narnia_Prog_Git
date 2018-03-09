@@ -1,5 +1,7 @@
 package nl.narniaklotekast;
 
+import java.util.Random;
+
 public class AngryNany {
 
     private Boolean nannyIsAngry;
@@ -14,8 +16,9 @@ public class AngryNany {
 
     public void gettingCaucht() {
 
-        int gettingCauchtChange = (int) Math.floor((Math.random() * 100) + 0);
-        System.out.println("kans dat je gepakt word" + gettingCauchtChange);
+        int gettingCauchtChange = (int) Math.floor((Math.random() * 101) + 0);
+    //    int gettingCauchtChange = new Random().nextInt(100);
+        System.out.println("kans dat je gepakt word" +" "+ gettingCauchtChange);
         if (gettingCauchtChange == 1) {
             System.out.println("Didden't get caught");
             nannyIsAngry= false;
@@ -28,7 +31,7 @@ public class AngryNany {
     public void gotCaughtByNany() {
         try {
             System.out.println("gepakt door nany");
-           // Thread.sleep(10);
+            //Thread.sleep(10);
         } catch (Exception ex) {
             System.out.println("nany gaat fout");
         }
